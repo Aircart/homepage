@@ -84,3 +84,25 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                = 'aircartapp.com' # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.region                = 'us-east-1'     # The AWS region for your bucket.
+  s3_sync.aws_access_key_id     = 'AKIAJ364I6JONIYFIEFA'
+  s3_sync.aws_secret_access_key = '9XKAq3bD7vLsOfCtlya97OJd/zgbkMqZL1PHbrqM'
+  s3_sync.delete                = false # We delete stray files by default.
+  s3_sync.after_build           = false # We chain after the build step by default. This may not be your desired behavior...
+  s3_sync.prefer_gzip           = true
+end
+
+# Activate sync extension
+# activate :sync do |sync|
+#   sync.fog_provider = 'AWS' # Your storage provider
+#   sync.fog_directory = 'homepage.aircartapp.com' # Your bucket name
+#   sync.fog_region = 'us-east-1' # The region your storage bucket is in (eg us-east-1, us-west-1, eu-west-1, ap-southeast-1 )
+#   sync.aws_access_key_id = 'AKIAJ364I6JONIYFIEFA' # Your Amazon S3 access key
+#   sync.aws_secret_access_key = '9XKAq3bD7vLsOfCtlya97OJd/zgbkMqZL1PHbrqM' # Your Amazon S3 access secret
+#   sync.existing_remote_files = 'delete' # What to do with your existing remote files? ( keep or delete )
+#   # sync.gzip_compression = false # Automatically replace files with their equivalent gzip compressed version
+#   # sync.after_build = false # Disable sync to run after Middleman build ( defaults to true )
+# end
