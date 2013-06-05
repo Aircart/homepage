@@ -9,8 +9,20 @@
 
 */
 
-// Google font Oxygen for logo
-@import url(http://fonts.googleapis.com/css?family=Oxygen);
+// Google font Oxygen for text, Exo for logo
+// @import url(//fonts.googleapis.com/css?family=Exo:800|Oxygen); Exo not working, Oxygen working for some reason...
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Exo ExtraBold'), local('Exo-ExtraBold'), url(http://themes.googleusercontent.com/static/fonts/exo/v1/AG5xXsrEGN56_nP_YRjTpevvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen'), local('Oxygen-Regular'), url(http://themes.googleusercontent.com/static/fonts/oxygen/v2/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
 
 $ac-green: rgb(0, 128, 0);
 $ac-font: 'Oxygen', sans-serif;
@@ -26,7 +38,7 @@ $ac-font: 'Oxygen', sans-serif;
 }
 
 body {
-  font-family: Verdana, san-serif;
+  font-family: Verdana, sans-serif;
   background: #ccc;
   color: #333;
 }
@@ -42,9 +54,10 @@ a {
 }
 
 #logo {
-  font-family: Verdana, sans-serif;
-  font-weight: 600;
+  font-family: 'Exo', sans-serif;
+  font-weight: 800;
   font-size: 2.0em;
+  letter-spacing: 1px;
   color: $ac-green;
   padding: 10px 0;
 }
@@ -111,11 +124,11 @@ footer {
   .contact {
     text-align: right;
     font-size: 85%;
-    text-shadow: 0px 1px 0px #e5e5ee;
-    color: #999;
+    text-shadow: #e5e5ee 1px 1px 0;;
+    color: #aaa;
 
     a {
-      color: #555;
+      color: #222;
     }
   }
 }
