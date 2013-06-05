@@ -8,3 +8,114 @@
 *= require "_layout/grid"
 
 */
+
+// Google font Oxygen for logo
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+$ac-green: rgb(0, 128, 0);
+$ac-font: 'Oxygen', sans-serif;
+
+@mixin full-justify {
+  text-align: justify;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+body {
+  font-family: Verdana, san-serif;
+  background: #ccc;
+  color: #333;
+}
+
+.main {
+  background: white;
+}
+
+a {
+  color: inherit;
+  color: $ac-green;
+  text-decoration: none;
+}
+
+#logo {
+  font-family: Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 2.0em;
+  color: $ac-green;
+  padding: 10px 0;
+}
+
+.splash {
+  $splash-height: 378px;
+
+  font-family: $ac-font;
+  height: $splash-height;
+  background-image: url(../images/apples.jpg);
+  background-position: center -300px;
+  
+  .tagline {
+    font-size: 135%;
+    padding-top: 10px;
+    text-shadow: 1px 1px 2px #000;
+    color: white;
+
+  }
+
+  .inner {
+    position: relative;
+    height: $splash-height;
+
+    .pitch {
+      font-family: $ac-font;
+      font-size: 220%;
+      color: white;
+      line-height: 1.15em;
+      text-shadow: 1px 1px 2px #000;
+      position: absolute;
+      bottom: 25px;
+    }
+
+    .device {
+      width: 200px;
+      height: 378px;
+      background: url(../images/iphone5-app.png);
+      position: absolute;
+      right: 0;
+      top: 80px;
+    }
+  }
+}
+
+.call-to-action {
+  margin: 25px 0 100px;
+  font-family: $ac-font;
+  padding-right: 225px;
+  font-size: 115%;
+}
+
+.press {
+  margin-bottom: 15px;
+  @include full-justify;
+
+  img {
+    vertical-align: middle;
+  }
+}
+
+footer {
+  padding: 10px 0 25px;
+  .contact {
+    text-align: right;
+    font-size: 85%;
+    text-shadow: 0px 1px 0px #e5e5ee;
+    color: #999;
+
+    a {
+      color: #555;
+    }
+  }
+}

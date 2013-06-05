@@ -5,12 +5,16 @@ $column-width   : 4em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
 
-$break          : 12;
+$break          : 9;
 
 
-.main {
+.inner, footer {
   @include container($total-columns, $break);
   //@include susy-grid-background;
+}
+
+.main {
+  
 }
 
 @include at-breakpoint($break) {
