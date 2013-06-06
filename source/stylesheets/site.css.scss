@@ -24,9 +24,6 @@
   src: local('Oxygen'), local('Oxygen-Regular'), url(http://themes.googleusercontent.com/static/fonts/oxygen/v2/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
 
-$ac-green: rgb(0, 128, 0);
-$ac-font: 'Oxygen', sans-serif;
-
 @mixin full-justify {
   text-align: justify;
 
@@ -36,6 +33,9 @@ $ac-font: 'Oxygen', sans-serif;
     width: 100%;
   }
 }
+
+$ac-green: rgb(0, 128, 0);
+$ac-font: 'Oxygen', sans-serif;
 
 body {
   font-family: Verdana, sans-serif;
@@ -91,22 +91,12 @@ a {
       position: absolute;
       bottom: 25px;
     }
-
-    .device {
-      width: 200px;
-      height: 378px;
-      background: url(../images/iphone5-app.png);
-      position: absolute;
-      right: 0;
-      top: 80px;
-    }
   }
 }
 
 .call-to-action {
   margin: 25px 0 100px;
   font-family: $ac-font;
-  padding-right: 225px;
   font-size: 115%;
 }
 
@@ -116,13 +106,14 @@ a {
 
   img {
     vertical-align: middle;
+    width: 160px;
   }
 }
 
 footer {
-  padding: 10px 0 25px;
+  padding-top: 10px;
+  padding-bottom: 25px;
   .contact {
-    text-align: right;
     font-size: 85%;
     text-shadow: #e5e5ee 1px 1px 0;;
     color: #aaa;

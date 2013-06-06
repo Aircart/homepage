@@ -1,6 +1,6 @@
 @import "susy";
 
-$total-columns  : 7;
+$total-columns  : 10;
 $column-width   : 4em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
@@ -14,11 +14,41 @@ $break          : 9;
 }
 
 .main {
-  
+  .press {
+    display: none;
+  }
+}
+footer {
+  .contact {
+    text-align: center;
+  }
 }
 
 @include at-breakpoint($break) {
   .main {
     //@include susy-grid-background;
+
+    .device {
+      width: 200px;
+      height: 378px;
+      background: url(../images/iphone5-app.png);
+      position: absolute;
+      right: 0;
+      top: 80px;
+    }
+
+    .call-to-action {
+      padding-right: 225px;
+    }
+  }
+
+  .press {
+    display: block !important;
+  }
+
+  footer {
+    .contact {
+      text-align: right;
+    }
   }
 }
