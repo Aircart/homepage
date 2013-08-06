@@ -9,47 +9,26 @@
 
 */
 
-// Google font Oxygen for text, Exo for logo
-// @import url(//fonts.googleapis.com/css?family=Exo:800|Oxygen); Exo not working, Oxygen working for some reason...
-@font-face {
-  font-family: 'Exo';
-  font-style: normal;
-  font-weight: 800;
-  src: local('Exo ExtraBold'), local('Exo-ExtraBold'), url(http://themes.googleusercontent.com/static/fonts/exo/v1/AG5xXsrEGN56_nP_YRjTpevvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-}
-@font-face {
-  font-family: 'Oxygen';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oxygen'), local('Oxygen-Regular'), url(http://themes.googleusercontent.com/static/fonts/oxygen/v2/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-}
-
-@mixin full-justify {
-  text-align: justify;
-
-  &:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
-}
-
 $ac-green: rgb(0, 128, 0);
+$ac-green-light: rgba(0, 128, 0, .9);
+$ac-light: rgb(200, 200, 200);
+$ac-lighter: rgb(220, 220, 220);
 $ac-font: 'Oxygen', sans-serif;
 
 body {
-  font-family: Verdana, sans-serif;
-  background: #ccc;
+  font-family: 'Oxygen', Helvetica, sans-serif;
+  background: white;
   color: #333;
 }
 
 .main {
   background: white;
+  padding-bottom: 100px;
 }
 
 a {
   color: inherit;
-  color: $ac-green;
+  color: $ac-green-light;
   text-decoration: none;
 }
 
@@ -59,7 +38,7 @@ a {
   font-size: 2.0em;
   letter-spacing: 1px;
   color: $ac-green;
-  padding: 10px 0;
+  margin: 10px 0;
 }
 
 .splash {
@@ -75,7 +54,6 @@ a {
     padding-top: 10px;
     text-shadow: 1px 1px 2px #000;
     color: white;
-
   }
 
   .inner {
@@ -85,15 +63,18 @@ a {
     .pitch {
       font-family: $ac-font;
       font-size: 220%;
-      color: white;
       line-height: 1.15em;
-      text-shadow: 1px 1px 2px #000;
+
+      color: white;
+      text-shadow: 0 -1px 1px rgba(0, 0, 0, .85);
+      background-clip: text;
+
       position: absolute;
       bottom: 118px;
 
       padding: 25px;
-      background: rgba(255, 255, 255, .45);
-      border-radius: 10px;
+      background: rgba(99, 99, 99, .65);
+      border-radius: 5px;
     }
   }
 }
@@ -104,26 +85,55 @@ a {
   font-size: 115%;
 }
 
-.press {
-  margin-bottom: 15px;
-  @include full-justify;
+.items {
+  margin: 0 15px;
 
   img {
-    vertical-align: middle;
-    width: 160px;
+    width: 164px;
+  }
+
+  .techcrunch, .ngconnect {
+    text-align: center;
+    .desc {
+      font-size: 85%;
+      margin-top: 10px;
+      text-align: center;
+      color: #aaa;
+    }
+  }
+
+  .contact {
+    margin-top: -36px;
+    .title {
+      font-size: 110%;
+    }
+    dl {
+      margin-top: .5em;
+      line-height: 1.75em;
+      dt {
+        position: absolute;
+        margin-top: 6px;
+        width: 20px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: top center;
+
+        &.email   { background-image: url(../images/contact/mail.png); }
+        &.phone { background-image: url(../images/contact/telephone.png); }
+        &.twitter { background-image: url(../images/contact/twitter.png); }
+      }
+    }
   }
 }
 
 footer {
-  padding-top: 10px;
+  border-top: 1px solid $ac-lighter;
+  padding-top: 12px;
   padding-bottom: 25px;
-  .contact {
+  .copyright {
+    text-align: right;
     font-size: 85%;
-    text-shadow: #e5e5ee 1px 1px 0;;
-    color: #aaa;
-
-    a {
-      color: #222;
-    }
+    font-weight: 300;
+    color: $ac-light;
   }
 }

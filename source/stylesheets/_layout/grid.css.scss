@@ -1,6 +1,6 @@
 @import "susy";
 
-$total-columns  : 10;
+$total-columns  : 3; // 736px
 $column-width   : 4em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
@@ -14,8 +14,13 @@ $break          : 9;
 }
 
 .main {
-  .press {
-    display: none;
+  .items {
+    > div {
+      margin-bottom: 75px;
+    }
+    .ag1 { @include span-columns(3,3); }
+    .ag2 { @include span-columns(3,3); }
+    .ag3 { @include span-columns(3,3); }
   }
 }
 footer {
@@ -40,10 +45,15 @@ footer {
     .call-to-action {
       padding-right: 225px;
     }
-  }
 
-  .press {
-    display: block !important;
+    .items {
+      > div {
+        margin-bottom: 0;
+      }
+      .ag1 { @include span-columns(1,3); }
+      .ag2 { @include span-columns(1,3); }
+      .ag3 { @include span-columns(1 omega, 3); }
+    }
   }
 
   footer {
