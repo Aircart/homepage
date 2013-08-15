@@ -70,7 +70,7 @@ a {
       background-clip: text;
 
       position: absolute;
-      bottom: 118px;
+      bottom: 40px;
 
       padding: 25px;
       background: rgba(99, 99, 99, .65);
@@ -80,9 +80,11 @@ a {
 }
 
 .call-to-action {
-  margin: 25px 0 100px;
+  margin: 20px 0 120px;
   font-family: $ac-font;
   font-size: 115%;
+  font-weight: 400;
+  opacity: .9;
 }
 
 .items {
