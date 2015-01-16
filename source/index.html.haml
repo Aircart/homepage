@@ -1,36 +1,39 @@
 .inner
-  #logo
-    Aircart
-.splash
-  .inner
+  .promo
     .pitch
-      Boost your revenues,
-      %br/
-      Delight your customers.
-    .device
+      Small footprint. Big results.
+    .product
+      %img{:src => 'images/aircart.png'}/
+    .announce
+      Introducing the world's best self-checkout experience.
 .inner
-  .call-to-action
-    Contact us to learn how the world's most advanced mobile shopping and self-checkout solution can help your store.
+  .vendors
+    .title
+      Vendors compatibility:
+    .vendor
+      %img{src: 'images/vendors/ibm-logo.png'}/
+    .vendor
+      %img{src: 'images/vendors/ncr-logo.png'}/
+    .vendor
+      .hellipsis
+        ···
+      .text
+        more soon
+  %form.sign-up{action: 'https://aircart.wufoo.com/forms/z1tshtu10rwow78/#public', method: 'post'}
+    %input{name: 'Field1', placeholder: 'Store'}
+    %input{name: 'Field3', placeholder: 'Email', type: 'email'}
+    %input{name: 'idstamp', value: '8fNQjrqpqbaHF0K2SGXOQqxpU4uN4otkjfVJH/XLLWg=', type: 'hidden'}
+    %input{name: 'saveForm', value: 'Submit', type: 'hidden'}
+    %button{type: 'submit'}
+      Wait list sign up
+.inner
   .items
-    .ag1.techcrunch
-      %img{:src => 'images/techcrunch.png'}/
+    .ag1.demo
+      %img{:src => 'images/store-icon.png'}/
+      .desc
+        Demo store opening <br />
+        -#Sep. 2014
+    .ag3.techcrunch
+      %img{:src => 'images/techcrunch_transparent.png'}/
       .desc
         SF Disrupt Staff Picks and Prize Winner
-    .ag2.ngconnect
-      %img{:src => 'images/ngconnect.png'}/
-      .desc
-        Participating Member
-    .ag3.contact
-      .title
-        Get in touch:
-      %dl
-        %dt.email
-        %dd
-          %a{:href => 'mailto:hello@aircartapp.com'} hello@aircartapp.com
-        %dt.phone
-        %dd
-          %a{:href => 'tel:8666079749'} (866) 607-9749
-        %dt.twitter
-        %dd
-          @
-          %a{:href => 'https://twitter.com/aircartapp'}> aircartapp

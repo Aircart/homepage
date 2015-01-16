@@ -16,14 +16,15 @@ $ac-lighter: rgb(220, 220, 220);
 $ac-font: 'Oxygen', sans-serif;
 
 body {
-  font-family: 'Oxygen', Helvetica, sans-serif;
+  font-family: Myriad, Helvetica, sans-serif;
   background: white;
   color: #333;
+  font-weight: 300;
 }
 
 .main {
   background: white;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 a {
@@ -32,59 +33,114 @@ a {
   text-decoration: none;
 }
 
-#logo {
-  font-family: 'Exo', sans-serif;
-  font-weight: 800;
-  font-size: 2.0em;
-  letter-spacing: 1px;
-  color: $ac-green;
-  margin: 10px 0;
-}
 
-.splash {
-  $splash-height: 378px;
+header {
+  margin: 10px auto;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
 
-  font-family: $ac-font;
-  height: $splash-height;
-  background-image: url(../images/apples.jpg);
-  background-position: center 0;
-  
-  .tagline {
-    font-size: 135%;
-    padding-top: 10px;
-    text-shadow: 1px 1px 2px #000;
-    color: white;
+  .logo {
+    font-family: 'Exo', sans-serif;
+    font-weight: 800;
+    font-size: 2.0em;
+    letter-spacing: 1px;
+    color: $ac-green;
   }
 
-  .inner {
-    position: relative;
-    height: $splash-height;
+  .phone {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
 
-    .pitch {
-      font-family: $ac-font;
-      font-size: 220%;
-      line-height: 1.15em;
+    font-size: 90%;
 
-      color: white;
-      text-shadow: 0 -1px 1px rgba(0, 0, 0, .85);
-      background-clip: text;
+    a {
+      color: #333;
+    }
+    
+  }
+}
 
-      position: absolute;
-      bottom: 40px;
+.promo {
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 1px;
 
-      padding: 25px;
-      background: rgba(99, 99, 99, .65);
-      border-radius: 5px;
+  .pitch {
+    font-size: 290%;
+    color: #333;
+    font-weight: 200;
+    margin-bottom: 20px;
+    //text-transform: lowercase;
+  }
+
+  .announce {
+    margin-top: -20px;
+    font-size: 140%;
+    font-weight: 100;
+  }
+}
+
+.vendors{
+  margin: 30px 0 20px;
+  text-align: center;
+  opacity: .5;
+
+  .title {
+    margin: 0 0 10px;
+  }
+  .vendor {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 10px;
+    line-height: 90%;
+
+    img {
+      height: 30px;
+      
+      -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+      filter: gray; filter: grayscale(100%);
+      filter: url(desaturate.svg#greyscale);
+
+      -webkit-filter: brightness(-20%);
+    }
+    .hellipsis {
+      font-size: 120%;
+    }
+    .text {
+      font-size: 80%;
     }
   }
 }
 
-.call-to-action {
-  margin: 20px 0 120px;
-  font-family: $ac-font;
-  font-size: 115%;
-  font-weight: 400;
-  opacity: .9;
+form.sign-up {
+  margin: 20px 0 90px;
+  text-align: center;
+
+  input, button {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    outline-color: $ac-green-light;
+    outline-width: 3px;
+  }
+
+  input {
+    padding: 5px;
+    width: 10em;
+    border-color: #ccc;
+    font-weight: 300;
+  }
+
+  button {
+    padding: 5px 15px;
+    color: white;
+    background: $ac-green-light;
+    border-color: $ac-green-light;
+    font-weight: 300;
+  }
 }
 
 .items {
@@ -94,7 +150,7 @@ a {
     width: 164px;
   }
 
-  .techcrunch, .ngconnect {
+  > div {
     text-align: center;
     .desc {
       font-size: 85%;
@@ -102,40 +158,25 @@ a {
       text-align: center;
       color: #aaa;
     }
-  }
-
-  .contact {
-    margin-top: -36px;
-    .title {
-      font-size: 110%;
-    }
-    dl {
-      margin-top: .5em;
-      line-height: 1.75em;
-      dt {
-        position: absolute;
-        margin-top: 6px;
-        width: 20px;
-        height: 16px;
-        background-repeat: no-repeat;
-        background-position: top center;
-
-        &.email   { background-image: url(../images/contact/mail.png); }
-        &.phone { background-image: url(../images/contact/telephone.png); }
-        &.twitter { background-image: url(../images/contact/twitter.png); }
+    
+    &.demo {
+      img {
+        width: 60px
       }
     }
   }
 }
 
 footer {
-  border-top: 1px solid $ac-lighter;
-  padding-top: 12px;
-  padding-bottom: 25px;
+  border-top: 1px solid #eee;
+  padding: 12px 0 25px;
   .copyright {
     text-align: right;
-    font-size: 85%;
-    font-weight: 300;
+    font-size: 80%;
+    font-weight: 100;
+    color: $ac-light;
+  }
+  a {
     color: $ac-light;
   }
 }
